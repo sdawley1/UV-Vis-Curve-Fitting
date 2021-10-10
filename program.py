@@ -157,9 +157,6 @@ for f in files:
     # All of these parameters are stored in a dictionary
     best_fit_data[f] = curve_fit(gaussian, dt[0], dt[1], p0=[est_center, est_area, est_std])
     
-    # Unpacking the tuple to make it easier to run this data through the gaussian function
-    x0, A, std = best_fit_data[f][0]
-    
 plt.xlabel('Wavelength (nm)')
 plt.ylabel('Absorbance')
 
