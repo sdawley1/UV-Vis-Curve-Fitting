@@ -1,5 +1,12 @@
+%matplotlib inline
 import numpy as np
 from math import sqrt
+import csv
+import matplotlib.pyplot as plt
+import os
+from scipy.optimize import curve_fit, linprog
+from scipy.integrate import trapezoid
+import warnings
 
 def gaussian(x, x_0, A, sigma):
     '''
@@ -15,10 +22,6 @@ def gaussian(x, x_0, A, sigma):
     Probability of x given normal distribution with parameters above as an array
     '''
     return A/sigma/sqrt(2*np.pi)*np.exp(-np.power(x-x_0,2)/(2.0*sigma**2))
-
-import csv
-import matplotlib.pyplot as plt
-import os
 
 def spectrum_grapher(filename, c='k', alpha=1, size=1):
     '''
@@ -58,10 +61,6 @@ def spectrum_grapher(filename, c='k', alpha=1, size=1):
     plt.ylabel('Absorbance')
     return
 
-import csv
-import matplotlib.pyplot as plt
-import os
-
 def spectrum_data(filename):
     '''
     This function accepts a CSV file containing absorbance data and plots wavelength versus absorbance.
@@ -95,8 +94,6 @@ def spectrum_data(filename):
             wavelengths.append(x); absorbances.append(y)
     return wavelengths, absorbances, wavelengths[absorbances.index(max(absorbances))], max(absorbances)
 
-%matplotlib inline
-
 # Get current working directory
 cwd = os.getcwd()
 
@@ -120,12 +117,6 @@ spectrum_grapher('MicelleStd.csv', c='b', size=2)
 spectrum_grapher('WaterStd.csv', c='g', size=2)
 
 plt.legend()
-
-%matplotlib inline
-import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit
-from scipy.integrate import trapezoid
-import warnings
 
 # Get current working directory
 cwd = os.getcwd()
@@ -185,9 +176,6 @@ for d in samples:
              gaussian(spectrum_data(d)[0], x0, A, std), 
              c='c', lw=2, alpha=0.4)
 plt.legend()
-
-%matplotlib inline
-from scipy.optimize import linprog
 
 # First establish the fit parameters we found above to refer back to later
 micelle_fit = best_fit_data['MicelleStd.csv']
