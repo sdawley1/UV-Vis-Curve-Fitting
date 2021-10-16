@@ -9,4 +9,4 @@ This was the definitely the most challenging assignment yet and I do not at all 
    
   The program I wrote relies on fitting UV/Vis data using a gaussian distribution and creating a linear program from a system of distributions which relies on the physical restrictions in place. The coding aspect of this algorithm was fairly straightforward, all things considered. The mathematical foundation behind why any of it works is also pretty cool and relies on some nice properties of the gaussian distribution. I mention them in the attached Jupyter notebook. 
 
-UPDATE: This approach to the problem did in fact arrive at the correct result. In fact, this was the same method used when the research was originally conducted.
+UPDATE: This approach to the problem arrived at the correct result. In fact, this was the same method used when the research was originally conducted.
