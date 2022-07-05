@@ -5,10 +5,10 @@ def gaussian(x, x_0, A, sigma):
     '''
     Parameters
     ----------
-    A = area under curve
-    sigma = scale parameter
-    x_0 = location parameter
-    x = array of number(s)
+    A (float) = area under curve
+    sigma (float) = scale parameter
+    x_0 (float) = location parameter
+    x (float) = array of number(s)
     
     Returns
     -------
